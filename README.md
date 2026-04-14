@@ -180,13 +180,6 @@ black src/
 - 🧪 **测试**: 添加测试用例
 - 🔧 **工具**: 开发辅助工具
 
-## 📚 文档
-
-- [安装指南](docs/installation.md) - 详细的安装说明
-- [用户手册](docs/user_manual.md) - 完整的使用指南
-- [API文档](docs/api_reference.md) - API接口文档
-- [配置说明](docs/configuration.md) - 配置文件详解
-- [故障排除](docs/troubleshooting.md) - 常见问题解决
 
 ## 🔗 相关项目
 
