@@ -175,20 +175,12 @@ git push origin feature/your-feature-name
 
 ## 📞 联系方式
 
-### 讨论渠道
-- **GitHub Issues**: [问题报告和功能请求](https://github.com/your-username/multimodal-sync/issues)
-- **GitHub Discussions**: [技术讨论和问答](https://github.com/your-username/multimodal-sync/discussions)
-- **邮件**: multimodal.sync@example.com
 
-### 维护者
-- **主要维护者**: [Your Name](mailto:your.email@example.com)
-- **代码审查**: 项目核心团队
+[王杰](851590822@qq.com)
 
-## 🏆 贡献者
 
-感谢所有为项目做出贡献的开发者：
 
-<!-- 贡献者列表将通过all-contributors自动生成 -->
+
 
 ## 📄 许可证
 
