@@ -1,0 +1,122 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodal-sync"
+version = "1.0.0"
+description = "多模态数据采集同步软件 - 用于驾驶实验的眼动、生理信号和视频数据同步"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Multimodal Sync Team", email = "multimodal.sync@example.com"}
+]
+maintainers = [
+    {name = "Project Maintainer", email = "maintainer@example.com"}
+]
+keywords = ["multimodal", "data-acquisition", "synchronization", "eyetracking", "physiology", "driving-simulation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pylsl>=1.16.0",
+    "matplotlib>=3.3.0",
+    "numpy>=1.19.0",
+    "pandas>=1.3.0",
+    "openpyxl>=3.0.0",
+    "pyqt5>=5.15.0",
+    "Pillow>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.910",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinx-rtd-theme>=1.0",
+    "sphinx-autodoc-typehints>=1.12",
+]
+build = [
+    "pyinstaller>=4.0",
+    "cx-freeze>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/multimodal-sync"
+Documentation = "https://multimodal-sync.readthedocs.io/"
+Repository = "https://github.com/your-username/multimodal-sync.git"
+"Bug Tracker" = "https://github.com/your-username/multimodal-sync/issues"
+"Discussions" = "https://github.com/your-username/multimodal-sync/discussions"
+
+[project.scripts]
+multimodal-sync = "src.custom_driving_sync_v15_seperate_ver:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.yaml", "*.yml", "*.toml", "*.ini", "*.cfg", "*.conf", "*.txt", "*.md"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
